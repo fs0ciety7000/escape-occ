@@ -24,7 +24,7 @@ Aucun secret côté application. Les jetons d'outillage (`COOLIFY_BASE_URL`, `CO
 ## Données
 
 - **Volume persistant** : aucun. Le jeu est 100 % statique et la sauvegarde v1 est hors périmètre (une sauvegarde future irait dans le stockage du navigateur, pas sur le serveur).
-- **Assets sous licence (LimeZu)** : ils sont inclus dans l'image et dans l'export (`.pck`), ce que la licence autorise. Le dépôt doit rester **privé** tant qu'il contient les PNG sources.
+- **Assets** : uniquement des packs gratuits sous licence CC0 (Kenney, Ninja Adventure, piano_no_renshu, m5x7). Ils peuvent être versionnés et diffusés sans restriction.
 
 ## Domaine
 
@@ -54,4 +54,4 @@ Aucun secret côté application. Les jetons d'outillage (`COOLIFY_BASE_URL`, `CO
 
 - **Application** : dans Coolify, redéployer le déploiement précédent, ou faire `git revert` du commit fautif sur `main` puis redéployer. Comme il n'y a ni base ni volume, aucune donnée n'est à restaurer.
 - **DNS** : passer l'enregistrement `occ` en « DNS seul » si le certificat ne s'émet pas derrière le proxy, le temps de l'émission. Ne jamais passer en mode SSL « Flexible ».
-- **Sauvegarde** : le dépôt Git suffit (image reconstruisible). Les packs LimeZu achetés sont à garder aussi hors du dépôt (compte itch.io).
+- **Sauvegarde** : le dépôt Git suffit (image reconstruisible).

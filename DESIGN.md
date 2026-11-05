@@ -88,11 +88,15 @@ Règles de couleur :
 
 | Usage | Pack | Licence | Règle |
 |---|---|---|---|
-| Décor de bureau, murs, sols, personnages | LimeZu, Modern Office Revamped + Modern Interiors (itch.io, payants) | LimeZu : crédit obligatoire, revente et redistribution interdites | Versions 16×16 uniquement. Les fichiers ne vont jamais dans un dépôt public. Crédit dans l'écran des crédits. |
+| Intérieur : murs, sols, mobilier | Kenney, Roguelike Indoors | CC0 | Base du décor. Recolorée, avec un contour de 1 px et une face avant sur les murs et les meubles hauts (vue 3/4). |
+| Extérieur : cour pavée, parking, voitures, poubelles | Kenney, RPG Urban Pack + Roguelike Modern City | CC0 | Pour la cour et le quai de chargement. |
+| Joueur et PNJ | piano_no_renshu, 15 Top-Down Character Sprites (16 px, marche 4 directions) | CC0 | L'animation d'attaque est à dessiner. |
 | Monstres, boss, effets, icônes, musique | Pixel-boy, Ninja Adventure | CC0 | Seulement les monstres, les effets, les icônes et l'audio (pas les tuiles fantasy). Recolorés vers la palette ci-dessus. |
 | Bruitages d'alarme et d'interface | Kenney, Sci-fi Sounds + Interface Sounds | CC0 | — |
 | Police | m5x7 | CC0 | — |
-| Ruban de danger, gyrophares, cour pavée, quai de chargement | faits maison | — | Dessinés dans la palette. |
+| Postes multi-écrans, baies serveur, ruban de danger, gyrophares | faits maison (à partir des tuiles Kenney) | — | Dessinés dans la palette. |
 
+- **Uniquement des assets gratuits** (0 €), sous licence CC0 de préférence. Pas de pack sans licence écrite (ex. Little Bits: Office), et pas de LimeZu (payant, ou gratuit mais limité au non commercial).
+- Le style de référence est Ninja Adventure (contour sombre, vue 3/4) : les tuiles Kenney, plus plates, sont reprises pour s'en rapprocher.
 - Tous les humains (joueur et PNJ) viennent d'une seule famille de sprites, pour garder les mêmes proportions.
 - Chaque asset tiers est noté dans `assets/CREDITS.md` : nom, auteur, URL, licence.
