@@ -88,7 +88,8 @@ Règles de couleur :
 
 | Usage | Pack | Licence | Règle |
 |---|---|---|---|
-| Intérieur : murs, sols, mobilier | Kenney, Roguelike Indoors | CC0 | Base du décor. Recolorée, avec un contour de 1 px et une face avant sur les murs et les meubles hauts (vue 3/4). |
+| Intérieur : murs, sols, mobilier de bureau | LimeZu, Modern Interiors (**version gratuite**, itch.io) | Gratuit, usage non commercial et privé, crédit obligatoire, redistribution interdite | Décor principal, en 16×16 uniquement. Le dépôt reste privé, le jeu est protégé par mot de passe. Contenu exact à confirmer à l'ouverture du zip (lire son `read_me`). |
+| Intérieur : compléments | Kenney, Roguelike Indoors | CC0 | Pour ce qui manque dans LimeZu gratuit, recoloré vers le même rendu. |
 | Extérieur : cour pavée, parking, voitures, poubelles | Kenney, RPG Urban Pack + Roguelike Modern City | CC0 | Pour la cour et le quai de chargement. |
 | Joueur et PNJ | piano_no_renshu, 15 Top-Down Character Sprites (16 px, marche 4 directions) | CC0 | L'animation d'attaque est à dessiner. |
 | Monstres, boss, effets, icônes, musique | Pixel-boy, Ninja Adventure | CC0 | Seulement les monstres, les effets, les icônes et l'audio (pas les tuiles fantasy). Recolorés vers la palette ci-dessus. |
@@ -96,7 +97,8 @@ Règles de couleur :
 | Police | m5x7 | CC0 | — |
 | Postes multi-écrans, baies serveur, ruban de danger, gyrophares | faits maison (à partir des tuiles Kenney) | — | Dessinés dans la palette. |
 
-- **Uniquement des assets gratuits** (0 €), sous licence CC0 de préférence. Pas de pack sans licence écrite (ex. Little Bits: Office), et pas de LimeZu (payant, ou gratuit mais limité au non commercial).
-- Le style de référence est Ninja Adventure (contour sombre, vue 3/4) : les tuiles Kenney, plus plates, sont reprises pour s'en rapprocher.
+- **Uniquement des assets gratuits** (0 €). Pas de pack sans licence écrite (ex. Little Bits: Office).
+- **Projet non commercial et privé** : c'est la condition de la version gratuite de LimeZu. Ne jamais vendre le jeu, rendre le dépôt public ou retirer le mot de passe tant que des fichiers LimeZu sont inclus.
+- Les tuiles Kenney, plus plates, sont reprises pour rejoindre le rendu LimeZu (contour sombre, vue 3/4). Les monstres Ninja Adventure sont recolorés vers la palette.
 - Tous les humains (joueur et PNJ) viennent d'une seule famille de sprites, pour garder les mêmes proportions.
 - Chaque asset tiers est noté dans `assets/CREDITS.md` : nom, auteur, URL, licence.

@@ -89,9 +89,19 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build image
         run: docker build --build-arg GODOT_VERSION="$GODOT_VERSION" -t escape-from-occ:ci .
-      - name: Smoke test /health and index
+      - name: Smoke test /health, password and index
         run: |
-          docker run -d --name occ -p 8080:80 escape-from-occ:ci
+          docker run -d --name occ -p 8080:80 -e BASIC_AUTH_USER=ci -e BASIC_AUTH_PASSWORD=ci-dummy escape-from-occ:ci
           for i in $(seq 1 20); do curl -fsS http://127.0.0.1:8080/health && break; sleep 1; done
-          curl -fsS -o /dev/null -w "index: HTTP %{http_code}\n" http://127.0.0.1:8080/
-          curl -fsSI http://127.0.0.1:8080/index.wasm | grep -i "content-type: application/wasm"
+          code=$(curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:8080/)
+          echo "index without password: HTTP $code"
+          test "$code" = 401
+          curl -fsS -u ci:ci-dummy -o /dev/null -w "index with password: HTTP %{http_code}\n" http://127.0.0.1:8080/
+          curl -fsSI -u ci:ci-dummy http://127.0.0.1:8080/index.wasm | grep -i "content-type: application/wasm"
+
+      - name: Container refuses to start without credentials
+        run: |
+          docker run -d --name occ-noauth escape-from-occ:ci
+          sleep 3
+          test "$(docker inspect -f '{{.State.Running}}' occ-noauth)" = "false"
+          docker logs occ-noauth 2>&1 | grep "BASIC_AUTH_USER and BASIC_AUTH_PASSWORD must be set"
