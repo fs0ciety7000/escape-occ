@@ -18,6 +18,7 @@ test:    godot --headless --path . --script res://tests/run_tests.gd   # code re
 lint:    gdlint scripts tests && gdformat --check scripts tests
 build:   godot --headless --path . --export-release "Web" build/web/index.html
 docker:  docker build -t escape-from-occ . && docker run -p 8080:80 escape-from-occ
+ci:      GitHub Actions (.github/workflows/ci.yml) : lint, import + tests, export web (artefact « web-build »), build Docker + /health
 ```
 
 ## Structure du dépôt
@@ -38,6 +39,7 @@ docker:  docker build -t escape-from-occ . && docker run -p 8080:80 escape-from-
 ├── scripts/            # .gd : autoload/, actors/, items/
 ├── assets/             # sprites/, tilesets/, audio/, fonts/
 ├── tests/run_tests.gd  # runner de tests headless (SceneTree)
+├── .github/workflows/ # CI : Godot headless sur GitHub (pas de poste local requis)
 ├── deploy/nginx.conf   # service statique + /health
 └── Dockerfile          # build de l'export web puis nginx
 ```
