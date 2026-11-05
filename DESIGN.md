@@ -88,11 +88,17 @@ Règles de couleur :
 
 | Usage | Pack | Licence | Règle |
 |---|---|---|---|
-| Décor de bureau, murs, sols, personnages | LimeZu, Modern Office Revamped + Modern Interiors (itch.io, payants) | LimeZu : crédit obligatoire, revente et redistribution interdites | Versions 16×16 uniquement. Les fichiers ne vont jamais dans un dépôt public. Crédit dans l'écran des crédits. |
+| Intérieur : murs, sols, mobilier de bureau | LimeZu, Modern Interiors (**version gratuite**, itch.io) | Gratuit, usage non commercial et privé, crédit obligatoire, redistribution interdite | Décor principal, en 16×16 uniquement. Le dépôt reste privé, le jeu est protégé par mot de passe. Contenu exact à confirmer à l'ouverture du zip (lire son `read_me`). |
+| Intérieur : compléments | Kenney, Roguelike Indoors | CC0 | Pour ce qui manque dans LimeZu gratuit, recoloré vers le même rendu. |
+| Extérieur : cour pavée, parking, voitures, poubelles | Kenney, RPG Urban Pack + Roguelike Modern City | CC0 | Pour la cour et le quai de chargement. |
+| Joueur et PNJ | piano_no_renshu, 15 Top-Down Character Sprites (16 px, marche 4 directions) | CC0 | L'animation d'attaque est à dessiner. |
 | Monstres, boss, effets, icônes, musique | Pixel-boy, Ninja Adventure | CC0 | Seulement les monstres, les effets, les icônes et l'audio (pas les tuiles fantasy). Recolorés vers la palette ci-dessus. |
 | Bruitages d'alarme et d'interface | Kenney, Sci-fi Sounds + Interface Sounds | CC0 | — |
 | Police | m5x7 | CC0 | — |
-| Ruban de danger, gyrophares, cour pavée, quai de chargement | faits maison | — | Dessinés dans la palette. |
+| Postes multi-écrans, baies serveur, ruban de danger, gyrophares | faits maison (à partir des tuiles Kenney) | — | Dessinés dans la palette. |
 
+- **Uniquement des assets gratuits** (0 €). Pas de pack sans licence écrite (ex. Little Bits: Office).
+- **Projet non commercial et privé** : c'est la condition de la version gratuite de LimeZu. Ne jamais vendre le jeu, rendre le dépôt public ou retirer le mot de passe tant que des fichiers LimeZu sont inclus.
+- Les tuiles Kenney, plus plates, sont reprises pour rejoindre le rendu LimeZu (contour sombre, vue 3/4). Les monstres Ninja Adventure sont recolorés vers la palette.
 - Tous les humains (joueur et PNJ) viennent d'une seule famille de sprites, pour garder les mêmes proportions.
 - Chaque asset tiers est noté dans `assets/CREDITS.md` : nom, auteur, URL, licence.

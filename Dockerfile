@@ -22,7 +22,10 @@ RUN godot --headless --path . --import \
  && test -f build/web/index.html
 
 FROM nginx:1.27-alpine
+RUN apk add --no-cache openssl
 COPY deploy/nginx.conf /etc/nginx/conf.d/default.conf
+# Runs at container start: writes /etc/nginx/.htpasswd from BASIC_AUTH_USER / BASIC_AUTH_PASSWORD.
+COPY --chmod=755 deploy/40-basic-auth.sh /docker-entrypoint.d/40-basic-auth.sh
 COPY --from=build /src/build/web /usr/share/nginx/html
 EXPOSE 80
 HEALTHCHECK --interval=30s --timeout=3s CMD wget -qO- http://127.0.0.1/health || exit 1
