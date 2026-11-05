@@ -29,3 +29,8 @@ target/
 
 # Claude Code : réglages locaux personnels
 .claude/settings.local.json
+
+# Godot
+export_credentials.cfg
+*.translation
+/android/

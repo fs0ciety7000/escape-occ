@@ -1,0 +1,8 @@
+.git
+.godot
+.claude
+build
+docs
+secrets
+.env
+.env.*
