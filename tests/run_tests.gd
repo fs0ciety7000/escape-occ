@@ -17,15 +17,21 @@ var _failed := 0
 
 
 func _initialize() -> void:
+	_run()
+
+
+# Async so scene tests can wait one frame: nodes added during _initialize
+# only get _ready() (and their @onready vars) on the next frame.
+func _run() -> void:
 	InputSetup.register()
 	_test_project_settings()
 	_test_input_actions()
 	_test_health()
 	_test_motion()
-	_test_player_attack()
-	_test_player_dodge()
-	_test_player_hit_and_death()
-	_test_test_room()
+	await _test_player_attack()
+	await _test_player_dodge()
+	await _test_player_hit_and_death()
+	await _test_test_room()
 	print("tests: %d passed, %d failed" % [_passed, _failed])
 	quit(1 if _failed > 0 else 0)
 
@@ -45,6 +51,7 @@ func assert_near(actual: float, expected: float, label: String) -> void:
 func _spawn_player() -> CharacterBody2D:
 	var player: CharacterBody2D = PlayerScene.instantiate()
 	root.add_child(player)
+	await process_frame
 	return player
 
 
@@ -102,7 +109,7 @@ func _test_motion() -> void:
 
 
 func _test_player_attack() -> void:
-	var player := _spawn_player()
+	var player: CharacterBody2D = await _spawn_player()
 	player.step(STEP, Vector2.LEFT, false, false)
 	assert_eq(player.facing, Vector2.LEFT, "player faces input")
 	player.step(STEP, Vector2.ZERO, true, false)
@@ -114,7 +121,7 @@ func _test_player_attack() -> void:
 
 
 func _test_player_dodge() -> void:
-	var player := _spawn_player()
+	var player: CharacterBody2D = await _spawn_player()
 	player.step(STEP, Vector2.UP, false, true)
 	assert_eq(player.state, PlayerScript.State.DODGE, "dodge starts")
 	assert_near(player.velocity.length(), player.dodge_speed, "dodge speed")
@@ -131,7 +138,7 @@ func _test_player_dodge() -> void:
 
 
 func _test_player_hit_and_death() -> void:
-	var player := _spawn_player()
+	var player: CharacterBody2D = await _spawn_player()
 	player.global_position = Vector2(100, 100)
 	var deaths := [0]
 	var last_health := [-1]
@@ -156,6 +163,7 @@ func _test_player_hit_and_death() -> void:
 func _test_test_room() -> void:
 	var room: Node2D = TestRoomScene.instantiate()
 	root.add_child(room)
+	await process_frame
 	var solids := room.get_node("Solids")
 	assert_eq(solids.get_child_count(), TestRoomScript.SOLIDS.size(), "room builds its solids")
 	assert_eq(room.get_node("Player").health.current, 5, "room spawns a full-health player")
