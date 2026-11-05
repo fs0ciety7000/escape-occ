@@ -36,13 +36,19 @@ ci:      GitHub Actions (.github/workflows/ci.yml) : lint, import + tests, expor
 ├── project.godot       # configuration Godot (320×180, pixel art, GL Compatibility)
 ├── export_presets.cfg  # preset « Web » (sans threads) → build/web/
 ├── scenes/             # .tscn : main.tscn, rooms/, actors/, ui/
-├── scripts/            # .gd : autoload/, actors/, items/
+├── scripts/            # .gd : autoload/ (InputSetup), actors/, components/, props/, rooms/, ui/, palette.gd
 ├── assets/             # sprites/, tilesets/, audio/, fonts/
 ├── tests/run_tests.gd  # runner de tests headless (SceneTree)
 ├── .github/workflows/ # CI : Godot headless sur GitHub (pas de poste local requis)
 ├── deploy/nginx.conf   # service statique + /health
 └── Dockerfile          # build de l'export web puis nginx
 ```
+
+## Jeu (repères)
+
+- Commandes : déplacement WASD/ZQSD (touches physiques) ou flèches, attaque J/Espace, esquive K/Maj ; manette : croix, X, B.
+- Couches de collision : 1 world, 2 player, 3 hittable, 4 player_attack, 5 hazard.
+- Couleurs : toujours via `scripts/palette.gd` (palette de `DESIGN.md`).
 
 ## Règles de travail
 
