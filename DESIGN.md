@@ -54,7 +54,7 @@ Règles de couleur :
 - Polices pixel bitmap, rendues à la taille native ou à un multiple entier. Pas de lissage.
 - **Titres et bandeaux** : une police pixel condensée de 8 à 10 px de haut, en capitales.
 - **Texte et dialogues** : une police pixel lisible de 8 px de haut, avec les accents français (é è à ç ô œ « »).
-- Les polices exactes sont choisies avec les assets. Licence OFL ou CC0 exigée.
+- Police retenue : **m5x7** (Daniel Linssen, CC0), à utiliser en 16/32/48 px d'écran. Les accents é è à ç sont à vérifier dans Godot ; si un glyphe manque, on passe à une autre police pixel OFL ou CC0.
 - Échelle (en pixels internes) : 8 pour le texte, 10 pour les titres de menu, 16 pour le logo et l'écran titre.
 
 ## Grille, espacements, contours
@@ -83,3 +83,16 @@ Règles de couleur :
 - Secousse d'écran : 2 px au maximum, et seulement sur les dégâts reçus ou le boss. Désactivable.
 - Transitions de salle : glissement de caméra de 0,4 s, en ease-out, comme dans A Link to the Past.
 - Paramètre d'accessibilité : « réduire les flashs et les secousses ».
+
+## Sources d'assets
+
+| Usage | Pack | Licence | Règle |
+|---|---|---|---|
+| Décor de bureau, murs, sols, personnages | LimeZu, Modern Office Revamped + Modern Interiors (itch.io, payants) | LimeZu : crédit obligatoire, revente et redistribution interdites | Versions 16×16 uniquement. Les fichiers ne vont jamais dans un dépôt public. Crédit dans l'écran des crédits. |
+| Monstres, boss, effets, icônes, musique | Pixel-boy, Ninja Adventure | CC0 | Seulement les monstres, les effets, les icônes et l'audio (pas les tuiles fantasy). Recolorés vers la palette ci-dessus. |
+| Bruitages d'alarme et d'interface | Kenney, Sci-fi Sounds + Interface Sounds | CC0 | — |
+| Police | m5x7 | CC0 | — |
+| Ruban de danger, gyrophares, cour pavée, quai de chargement | faits maison | — | Dessinés dans la palette. |
+
+- Tous les humains (joueur et PNJ) viennent d'une seule famille de sprites, pour garder les mêmes proportions.
+- Chaque asset tiers est noté dans `assets/CREDITS.md` : nom, auteur, URL, licence.
